@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'habilidade',
     'universo',
     'project_hero',
+    'rest_framework.authtoken',
+
 ]
 
 MIDDLEWARE = [
