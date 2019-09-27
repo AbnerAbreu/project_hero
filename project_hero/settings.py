@@ -37,6 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django',
+    'rest_framework',
+    'heroi',
+    'cat_heroi',
+    'habilidade',
+    'universo',
+    'project_hero',
 ]
 
 MIDDLEWARE = [
