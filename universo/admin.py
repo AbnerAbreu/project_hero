@@ -1,3 +1,4 @@
 from django.contrib import admin
+from universo.models import Universo
 
-# Register your models here.
+admin.site.Register(Universo)
