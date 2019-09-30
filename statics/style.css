@@ -21,6 +21,8 @@ header{
 header h1{
     font-family: 'Ranga', cursive;
     font-size: 35pt;
+    justify-content: center;
+    align-items: center;
 }
 
 header h5{
@@ -67,9 +69,51 @@ section{
 aside{
     grid-area: aside;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+aside div{
+    background-image: url(70s\ SUN\ ART\ PRINT\ is\ the\ best\ way\ to\ banish\ those\ blank\ walls\ and\ bring\ art\ to\ your\ space_\ All\ posters\ are\ giclée-printed\ on\ archival\,\ acid-free\ paper\ for\ sharp\,\ high-quality\ images\ and\ super\ vibrant\ colors.\ 📣DEAL\ ALERT📣\ To\ get\ 15%\ off.\ 24x36\ large);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 180px;
+    width: 180px;
+    border-radius: 50px;
+    padding: 15px;
+}
+
+aside div input{
+    border: none;    
+    border-bottom: 2px black solid;
+    cursor: pointer;
+    height: 30px;
+}
+
+aside div button{
+    cursor: pointer;
+    height: 30px;
 }
 
 footer{
     grid-area: footer;
-    background-color: lightcoral;
+    background-color: forestgreen;
+}
+
+footer div{
+    background-color: forestgreen;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+footer div img{
+    height: 50px;
+    width: 50px;
 }
