@@ -42,4 +42,7 @@ class HeroiSerializer(serializers.Serializer):
         instance.save()
         return instance
 
-
+class HeroiLightSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
+    nome = serializers.CharField()
+    idade = serializers.IntegerField()
