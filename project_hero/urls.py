@@ -36,9 +36,5 @@ router.register(r'habilidades', HabilidadeViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('herois/<int:id>', HeroiDetails.as_view()),
-    path('herois', HeroiList.as_view()),
     path('',include(router.urls)),
-    path('token', obtain_auth_token),
-    
 ]

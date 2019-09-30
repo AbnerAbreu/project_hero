@@ -30,3 +30,6 @@ class Heroi(models.Model):
         on_delete=models.CASCADE,
         related_name='heroi_cat'
     )
+
+    def __init__(self):
+        return self.nome
