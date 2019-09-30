@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from habilidade.models import  Habilidade
+from habilidade.models import Habilidade
 
 
 class HabilidadeSerializer(serializers.Serializer):
@@ -10,8 +10,12 @@ class HabilidadeSerializer(serializers.Serializer):
         habilidade = Habilidade.objects.create(**validated_data)
         return habilidade
 
-
     def update(self, instance, validated_data):
-         instance.nome = validated_data.get('nome')
-         instance.save()
-         return instance
+        instance.nome = validated_data.get('nome')
+        instance.save()
+        return instance
+
+
+class HabilidadeLightSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
+    nome = serializers.CharField()

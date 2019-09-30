@@ -1,3 +1,4 @@
 from django.contrib import admin
+from habilidade.models import Habilidade
 
-# Register your models here.
+admin.site.register(Habilidade)
