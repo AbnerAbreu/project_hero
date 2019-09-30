@@ -19,7 +19,7 @@ from django.conf.urls import include
 from rest_framework import routers
 from rest_framework.authtoken.views import obtain_auth_token
 
-from cat_heroi.views import CategoriaViewSet, CategoriaList, CategoriaDetails
+from cat_heroi.views import CategoriaViewSet
 from universo.views import UniversoViewSet, UniversoList, UniversoDetails
 from heroi.views import HeroiViewSet, HeroiList, HeroiDetails
 from habilidade.views import HabilidadeViewSet, HabilidadeList, HabilidadeDetails
@@ -35,6 +35,7 @@ router.register(r'habilidades', HabilidadeViewSet)
 
 
 urlpatterns = [
+    path('', include(router.urls)),
     path('admin/', admin.site.urls),
     
 ]

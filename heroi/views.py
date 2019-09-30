@@ -14,8 +14,8 @@ class HeroiViewSet(viewsets.ModelViewSet):
     filter_backends = [SearchFilter]
     search_fields = ['^nome', '=idade']
     queryset = Heroi.objects.all()
-    permission_classes = (IsAuthenticatedOrReadOnly,)
-    authentication_classes = (TokenAuthentication,)
+    # permission_classes = (IsAuthenticatedOrReadOnly,)
+    # authentication_classes = (TokenAuthentication,)
     serializer_class = HeroiSerializer
 
 

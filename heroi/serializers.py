@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from cat_heroi.models import Categoria
+from habilidade.models import Habilidade
 from heroi.models import Heroi
 from universo.models import Universo
 
@@ -33,7 +34,11 @@ class HeroiSerializer(serializers.Serializer):
         universo = Universo.objects.get(id=universo_data[id])
         categoria_data = validated_data.pop('categoria')
         categoria = Categoria.objects.get(id=categoria_data[id])
-        heroi = Heroi.objects.create(categoria=categoria,universo=universo, **validated_data)
+        habilidade_data = validated_data.pop('habilidade')
+        lista = []
+        for habilidade in habilidade_data:
+            lista.insert(Habilidade.objects.get(id=habilidade['id']))
+        heroi = Heroi.objects.create(categoria=categoria,universo=universo,habilidade=lista , **validated_data)
         return heroi
 
     def update(self, instance, validated_data):
@@ -41,7 +46,7 @@ class HeroiSerializer(serializers.Serializer):
         instance.idade = validated_data.get('idade')
         instance.save()
         return instance
-
+    
 class HeroiLightSerializer(serializers.Serializer):
     id = serializers.IntegerField()
     nome = serializers.CharField()
