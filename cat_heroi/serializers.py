@@ -15,6 +15,7 @@ class CategoriaSerializer(serializers.ModelSerializer):
         instance.save()
         return instance
 
+
 class CategoriaLightSerializer(serializers.Serializer):
     id = serializers.IntegerField()
     nome = serializers.CharField()
