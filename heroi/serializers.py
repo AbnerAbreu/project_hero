@@ -28,7 +28,6 @@ class HeroiSerializer(serializers.Serializer):
     habilidades = HabilidadeDTOSerializer()
     categoria = CategoriaDTOSerializer()
 
-
     def create(self, validated_data):
         universo_data = validated_data.pop('universo')
         universo = Universo.objects.get(id=universo_data[id])
@@ -37,12 +36,10 @@ class HeroiSerializer(serializers.Serializer):
         heroi = Heroi.objects.create(categoria=categoria,universo=universo, **validated_data)
         return heroi
 
-
     def update(self, instance, validated_data):
-         instance.nome = validated_data.get('nome')
-         instance.idade = validated_data.get('idade')
-         instance.save()
-         return instance
-
+        instance.nome = validated_data.get('nome')
+        instance.idade = validated_data.get('idade')
+        instance.save()
+        return instance
 
 
