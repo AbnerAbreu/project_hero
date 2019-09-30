@@ -6,3 +6,6 @@ class Universo(models.Model):
         max_length=255,
         verbose_name='Nome Universo'
     )
+
+    def __init__(self):
+        return self.nome

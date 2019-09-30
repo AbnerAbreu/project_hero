@@ -35,5 +35,5 @@ router.register(r'habilidades', HabilidadeViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
-    
+    path('',include(router.urls)),
 ]
