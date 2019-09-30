@@ -39,7 +39,7 @@ class HeroiDetails(views.APIView):
             return Heroi.objects.get(id=id)
         except:
             raise Http404
-    def get(self, request, id)
+    def get(self, request, id):
         heroi = self.get_object(id)
         serializer = HeroiSerializer(heroi)
         return Response(serializer.data, status=status.HTTP_200_OK)
