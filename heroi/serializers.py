@@ -8,17 +8,17 @@ from universo.models import Universo
 
 class UniversoDTOSerializer(serializers.Serializer):
     id = serializers.IntegerField()
-    nome = serializers.CharField(max_length=255)
+    nome = serializers.CharField(read_only=True)
 
 
 class HabilidadeDTOSerializer(serializers.Serializer):
     id = serializers.IntegerField()
-    nome = serializers.CharField(max_length=255)
+    nome = serializers.CharField(read_only=True)
 
 
 class CategoriaDTOSerializer(serializers.Serializer):
     id = serializers.IntegerField()
-    nome = serializers.CharField(max_length=255)
+    nome = serializers.CharField(read_only=True)
 
 
 class HeroiSerializer(serializers.Serializer):
@@ -26,14 +26,14 @@ class HeroiSerializer(serializers.Serializer):
     nome = serializers.CharField(max_length=255)
     idade = serializers.IntegerField()
     universo = UniversoDTOSerializer()
-    habilidades = HabilidadeDTOSerializer()
+    habilidades = HabilidadeDTOSerializer(many=True)
     categoria = CategoriaDTOSerializer()
 
     def create(self, validated_data):
         universo_data = validated_data.pop('universo')
-        universo = Universo.objects.get(id=universo_data[id])
+        universo = Universo.objects.get(id=universo_data['id'])
         categoria_data = validated_data.pop('categoria')
-        categoria = Categoria.objects.get(id=categoria_data[id])
+        categoria = Categoria.objects.get(id=categoria_data['id'])
         habilidade_data = validated_data.pop('habilidade')
         lista = []
         for habilidade in habilidade_data:

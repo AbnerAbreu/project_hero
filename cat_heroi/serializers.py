@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import Categoria
 
 
-class CategoriaSerializer(serializers.ModelSerializer):
+class CategoriaSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     nome = serializers.CharField(max_length=255)
 

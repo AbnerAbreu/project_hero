@@ -20,9 +20,9 @@ from rest_framework import routers
 from rest_framework.authtoken.views import obtain_auth_token
 
 from cat_heroi.views import CategoriaViewSet
-from universo.views import UniversoViewSet, UniversoList, UniversoDetails
+from universo.views import UniversoViewSet
 from heroi.views import HeroiViewSet
-from habilidade.views import HabilidadeViewSet, HabilidadeList, HabilidadeDetails
+from habilidade.views import HabilidadeViewSet
 
 
 router = routers.DefaultRouter()
