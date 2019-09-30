@@ -13,6 +13,6 @@ class CategoriaViewSet(viewsets.ModelViewSet):
     filter_backends = [SearchFilter]
     search_fields = ['Nome Categoria']
     queryset = Categoria.objects.all()
-    permission_classes = (IsAuthenticatedOrReadOnly,)
-    authentication_classes = (TokenAuthentication,)
+    # permission_classes = (IsAuthenticatedOrReadOnly,)
+    # authentication_classes = (TokenAuthentication,)
     serializer_class = CategoriaSerializer
