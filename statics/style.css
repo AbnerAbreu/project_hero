@@ -5,21 +5,58 @@ body{
                          'navbar navbar navbar navbar'
                          'section section aside aside'
                          'footer footer footer footer';
-    grid-template-rows: 30vh 10vh 100vh 10vh;
+    grid-template-rows: 30vh 10vh 100vh 25vh;
 }
 
 header{
     grid-area: header;
-    background-color: blue;
+    background-image: url(header.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
 }
 
 header h1{
-    font-family: 
+    font-family: 'Ranga', cursive;
+    font-size: 35pt;
+}
+
+header h5{
+    font-family: 'Mansalva', cursive;
+    font-size: 20pt;
 }
 
 nav{
     grid-area: navbar;
+    background-image: url(e8f7ff8a-be43-4d8d-af83-2c5a32e07732.jpeg);
+    background-position: bottom;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+}
+
+nav button{
+    width: 150px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+nav button:hover{
     background-color: black;
+    color: white;
+}
+
+nav button a{
+    color: white;
+    font-size: 20pt;
+    text-decoration: none;
+    cursor: pointer;
+
 }
 
 section{
